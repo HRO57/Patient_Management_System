@@ -12,25 +12,35 @@ use Illuminate\Support\Facades\Validator;
 class PatientController extends Controller
 {
     public function index(Request $request)
-    {
-        $limit = $request->get('limit', 5); // Default to 10 items per page
-        $patients = Patient::paginate($limit);
+{
+    $limit = $request->get('limit', 5); // Default to 5 items per page
+    $search = $request->get('name', ''); // Get the search term
 
-        if ($patients->count() > 0) {
-            return response()->json([
-                "status" => "success",
-                "message" => $patients->items(), // The paginated items
-                "current_page" => $patients->currentPage(),
-                "last_page" => $patients->lastPage(),
-                "total" => $patients->total(),
-            ], 200);
-        } else {
-            return response()->json([
-                "status" => "error",
-                "message" => "NO PATIENT"
-            ], 404);
-        }
+    // Query the patients, applying the search filter if the search term is provided
+    $query = Patient::query();
+
+    if ($search) {
+        $query->where('name', 'like', '%' . $search . '%');
     }
+
+    $patients = $query->paginate($limit);
+
+    if ($patients->total() > 0) {
+        return response()->json([
+            "status" => "success",
+            "message" => $patients->items(), // The paginated items
+            "current_page" => $patients->currentPage(),
+            "last_page" => $patients->lastPage(),
+            "total" => $patients->total(),
+        ], 200);
+    } else {
+        return response()->json([
+            "status" => "error",
+            "message" => "NO PATIENT"
+        ], 404);
+    }
+}
+
 
 
     public function store(Request $request)

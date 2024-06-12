@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import debounce from "lodash/debounce";
 import '../styles.css'; // Import the CSS file
 
 function Patient() {
@@ -10,15 +11,21 @@ function Patient() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [successMessage, setSuccessMessage] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchPatients(currentPage);
   }, [currentPage]);
 
+  useEffect(() => {
+    fetchPatientsDebounced(currentPage);
+  }, [searchTerm]);
+
   const fetchPatients = (page) => {
     setLoading(true);
+    const query = searchTerm ? `&name=${searchTerm}` : '';
     axios
-      .get(`http://127.0.0.1:8000/api/patients?page=${page}&limit=5`)
+      .get(`http://127.0.0.1:8000/api/patients?page=${page}&limit=5${query}`)
       .then((res) => {
         console.log("API Response:", res.data); // Log the response data
         const patientsData = Array.isArray(res.data.message)
@@ -34,6 +41,8 @@ function Patient() {
         setLoading(false);
       });
   };
+
+  const fetchPatientsDebounced = useCallback(debounce(fetchPatients, 500), [searchTerm]);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -89,6 +98,15 @@ function Patient() {
             </div>
             <div className="card-body">
               {successMessage && <div className="alert alert-success">{successMessage}</div>}
+              <div className="mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search by name..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
               <table className="table table-bordered table-striped">
                 <thead>
                   <tr>
