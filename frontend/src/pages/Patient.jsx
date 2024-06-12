@@ -13,17 +13,9 @@ function Patient() {
   const [successMessage, setSuccessMessage] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-    fetchPatients(currentPage);
-  }, [currentPage]);
-
-  useEffect(() => {
-    fetchPatientsDebounced(currentPage);
-  }, [searchTerm]);
-
-  const fetchPatients = (page) => {
+  const fetchPatients = useCallback((page, search) => {
     setLoading(true);
-    const query = searchTerm ? `&name=${searchTerm}` : '';
+    const query = search ? `&name=${search}` : '';
     axios
       .get(`http://127.0.0.1:8000/api/patients?page=${page}&limit=5${query}`)
       .then((res) => {
@@ -40,9 +32,23 @@ function Patient() {
         setError(error);
         setLoading(false);
       });
-  };
+  }, []);
 
-  const fetchPatientsDebounced = useCallback(debounce(fetchPatients, 500), [searchTerm]);
+  useEffect(() => {
+    const debouncedFetchPatients = debounce(() => {
+      fetchPatients(currentPage, searchTerm);
+    }, 500);
+
+    debouncedFetchPatients();
+
+    return () => {
+      debouncedFetchPatients.cancel();
+    };
+  }, [currentPage, searchTerm, fetchPatients]);
+
+  useEffect(() => {
+    fetchPatients(currentPage, searchTerm);
+  }, [currentPage, fetchPatients]);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
