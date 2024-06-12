@@ -1,0 +1,217 @@
+/* Add this CSS to your main stylesheet or a CSS file that's imported in your component */
+.button-custom {
+    width: 100px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    display: inline-block; /* Ensure buttons stay inline */
+  }
+
+/* CSS for Home.jsx */
+/* Home.css */
+.home-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.home-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.action-buttons {
+    margin-top: 30px;
+}
+
+.action-buttons .btn {
+    margin-right: 10px;
+}
+
+.features {
+    margin-top: 50px;
+}
+
+.features h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features li {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.features li span {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* About.css */
+.about-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Login.css */
+/* styles.css */
+
+.login-container {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form label {
+    margin-bottom: 5px;
+  }
+  
+  .login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .login-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .register-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .register-link p {
+    margin-bottom: 0;
+  }
+  
+  .register-link a {
+    color: #007bff;
+  }
+  
+
+/* Register.css */
+/* styles.css */
+
+/* styles.css */
+/* styles.css */
+
+.register-container {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; /* Adjust width for smaller screens */
+    max-width: 400px; /* Limit maximum width for larger screens */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register-form label {
+    margin-bottom: 5px;
+  }
+  
+  .register-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .register-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .login-link p {
+    margin-bottom: 0;
+  }
+  
+  .login-link a {
+    color: #007bff;
+  }
+  
+  /* Responsive layout adjustments */
+  @media only screen and (max-width: 768px) {
+    .register-container {
+      width: 90%; /* Adjust width for smaller screens */
+      max-width: none; /* Remove maximum width constraint */
+    }
+  }
+  
