@@ -55,13 +55,13 @@
 }
 
 .features li span {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     padding: 10px 20px;
     border-radius: 20px;
     display: inline-block;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
     font-weight: bold;
-    color: #333;
+    color: #61d0ab;
     text-transform: uppercase;
     letter-spacing: 1px;
 }

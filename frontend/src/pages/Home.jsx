@@ -14,7 +14,7 @@ function Home() {
             </div>
             <div className="features">
                 <h2>Key Features:</h2>
-                <ul>
+                <ul>0
                     <li><span>Manage patient records</span></li>
                     <li><span>Schedule appointments</span></li>
                     <li><span>Track medical history</span></li>
