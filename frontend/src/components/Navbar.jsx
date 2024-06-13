@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Function to handle logout
-  const handleLogout = () => {
-    // Implement your logout logic here
-    // For now, let's just set isLoggedIn to false
-    setIsLoggedIn(false);
-  };
+  // // Function to handle logout
+  // const handleLogout = () => {
+  //   // Implement your logout logic here
+  //   // For now, let's just set isLoggedIn to false
+  //   setIsLoggedIn(false);
+  // };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -48,7 +48,7 @@ function Navbar() {
               </Link>
             </li>
             {/* Conditional rendering based on authentication status */}
-            {isLoggedIn ? (
+            {/* {isLoggedIn ? (
               <li className="nav-item">
                 <button className="btn btn-link nav-link" onClick={handleLogout}>
                   Logout
@@ -67,7 +67,7 @@ function Navbar() {
                   </Link>
                 </li>
               </>
-            )}
+            )} */}
           </ul>
         </div>
       </div>

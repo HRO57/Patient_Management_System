@@ -2,7 +2,8 @@ import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import debounce from "lodash/debounce";
-import '../styles.css'; // Import the CSS file
+import '../styles.css';
+import Navbar from "../components/Navbar";
 
 function Patient() {
   const [patients, setPatients] = useState([]);
@@ -87,7 +88,10 @@ function Patient() {
   }
 
   return (
+    <div>
+      <Navbar />
     <div className="container mt-5">
+      
       <div className="row">
         <div className="col-md-12">
           <div className="card">
@@ -151,6 +155,7 @@ function Patient() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

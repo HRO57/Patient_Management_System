@@ -1,34 +1,41 @@
-// About.js
 import React from "react";
-// import { Link } from "react-router-dom";
 import "../styles.css"; // Import the CSS file
+import Navbar from "../components/Navbar";
 
 function About() {
   return (
-    <div className="about-container">
-      <h1 className="title text-center mb-4 mt-4    ">About Patient Management System</h1>
-      <p>
-        The Patient Management System is a comprehensive software solution
-        designed to streamline the management of patient data in healthcare
-        facilities. From small clinics to large hospitals, our system provides
-        robust features to simplify administrative tasks and improve patient
-        care.
-      </p>
-      <p>
-        With our user-friendly interface and powerful functionality, healthcare
-        providers can efficiently manage patient records, schedule appointments,
-        track medical history, and generate reports. By centralizing patient
-        information and automating repetitive tasks, healthcare professionals
-        can focus more on delivering quality care to their patients.
-      </p>
-      <div className="features">
-        <h2>Key Features:</h2>
-        <ul>
-          <li>Manage patient records</li>
-          <li>Schedule appointments</li>
-          <li>Track medical history</li>
-          <li>Generate reports</li>
-        </ul>
+    <div>
+      <Navbar />
+      <div className="about-container">
+        <h1 className="title text-center mb-4 mt-4">
+          
+        </h1>
+
+        <div className="content-sections">
+          <div className="">
+            <h2>Our Mission</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+          </div>
+
+          <div className="content-right">
+            <h2>Our Vision</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

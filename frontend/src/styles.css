@@ -55,15 +55,20 @@
 }
 
 .features li span {
-    background-color: #ffffff;
+    background-color: #000000;
     padding: 10px 20px;
     border-radius: 20px;
     display: inline-block;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px;
     font-weight: bold;
     color: #61d0ab;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 5rem;
 }
 
 /* About.css */
