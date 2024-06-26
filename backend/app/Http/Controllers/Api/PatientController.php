@@ -13,7 +13,7 @@ class PatientController extends Controller
 {
     public function index(Request $request)
     {
-        $limit = $request->get('limit', 3); // Default to 5 items per page
+        $limit = $request->get('limit', 5); // Default to 5 items per page
         $search = $request->get('phone', ''); // Get the search term
 
         // Query the patients, applying the search filter if the search term is provided

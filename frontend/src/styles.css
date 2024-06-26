@@ -292,6 +292,7 @@
 .bg-dark-on-hover {
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
   color: #ffffff; /* White text */
+  margin-left: 1rem;
 }
 
 .bg-dark-on-hover:hover {
@@ -311,4 +312,11 @@
 
 .card {
   margin-top: 20px;
+}
+
+
+/* styles.css */
+.sidebar .nav-item .nav-link:hover {
+  background-color: #343a40; /* or any color you prefer */
+  color: white; /* Ensure the text color is visible */
 }

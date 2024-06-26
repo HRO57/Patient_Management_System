@@ -9,7 +9,7 @@ function Sidebar() {
     <div className="d-flex">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark flex-column sidebar">
         <Link className="navbar-brand d-flex align-items-center" to="/home-page">
-          <b className="p-2 rounded text-p-2 rounded text-light bg-dark-on-hover ">Patient Management System</b>
+          <b className="p-2 rounded text-light bg-dark-on-hover">Patient Management System</b>
         </Link>
         <button
           className="navbar-toggler"
@@ -24,7 +24,7 @@ function Sidebar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav flex-column">
-            <li className="nav-item">
+            <li className="nav-item ">
               <Link className="nav-link" to="/patients-list">
                 Patient List
               </Link>
