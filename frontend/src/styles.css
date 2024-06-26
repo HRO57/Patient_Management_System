@@ -287,7 +287,7 @@
 }
 
 
-
+/* Hover */
 
 .bg-dark-on-hover {
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
@@ -297,4 +297,18 @@
 .bg-dark-on-hover:hover {
   background-color: #14a298; /* White background on hover */
   color: #000000; /* Black text on hover */
+}
+
+/* edit sidebar */
+
+.container-with-sidebar {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.card {
+  margin-top: 20px;
 }

@@ -13,7 +13,7 @@ function Home() {
                     <p className="mt-5">Manage your patients efficiently with our user-friendly system. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et commodo neque. Phasellus sed ligula justo.</p>
                     <div className="action-buttons">
                         <Link to="/patients-list" className="btn btn-primary">View Patient List</Link>
-                        <Link to="/patients/create" className="btn btn-success">Add New Patient</Link>
+                        {/* <Link to="/patients/create" className="btn btn-success">Add New Patient</Link> */}
                     </div>
                     <div className="features">
                         <ul className="d-flex mt-5">

@@ -68,6 +68,14 @@ function Patient() {
       });
   };
 
+  // if(loading) {
+  //   return <div>Loading...</div>;
+  // }
+
+  // if(error) {
+  //   return <div>Error: {error.message}</div>;
+  // }
+
   return (
     <div className="d-flex">
       <Sidebar />
@@ -76,7 +84,7 @@ function Patient() {
           <div className="row">
             <div className="col-md-12">
               <div className="card">
-                <div className="card-header">
+                <div className="card-header sticky-h">
                   <h4>
                     Patient List
                     <Link
