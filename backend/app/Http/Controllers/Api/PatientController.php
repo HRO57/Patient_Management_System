@@ -13,14 +13,14 @@ class PatientController extends Controller
 {
     public function index(Request $request)
     {
-        $limit = $request->get('limit', 5); // Default to 5 items per page
-        $search = $request->get('name', ''); // Get the search term
+        $limit = $request->get('limit', 3); // Default to 5 items per page
+        $search = $request->get('phone', ''); // Get the search term
 
         // Query the patients, applying the search filter if the search term is provided
         $query = Patient::query();
 
         if ($search) {
-            $query->where('name', 'like', '%' . $search . '%');
+            $query->where('phone', 'like', '%' . $search . '%');
         }
 
         $patients = $query->paginate($limit);
@@ -32,6 +32,7 @@ class PatientController extends Controller
                 "current_page"  => $patients->currentPage(),
                 "last_page"     => $patients->lastPage(),
                 "total"         => $patients->total(),
+                ""=> $patients->lastPage(),
             ], 200);
         } else {
             return response()->json([

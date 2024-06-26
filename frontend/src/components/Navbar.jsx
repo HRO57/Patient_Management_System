@@ -1,23 +1,15 @@
-// import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import "../styles.css"; // Import the CSS file
 
-function Navbar() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // // Function to handle logout
-  // const handleLogout = () => {
-  //   // Implement your logout logic here
-  //   // For now, let's just set isLoggedIn to false
-  //   setIsLoggedIn(false);
-  // };
-
+function Sidebar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/home-page">
-          <b>Patient Management System</b>
+    <div className="d-flex">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark flex-column sidebar">
+        <Link className="navbar-brand d-flex align-items-center" to="/home-page">
+          <b className="p-2 rounded text-p-2 rounded text-light bg-dark-on-hover ">Patient Management System</b>
         </Link>
         <button
           className="navbar-toggler"
@@ -31,7 +23,7 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav flex-column">
             <li className="nav-item">
               <Link className="nav-link" to="/patients-list">
                 Patient List
@@ -70,9 +62,12 @@ function Navbar() {
             )} */}
           </ul>
         </div>
+      </nav>
+      <div className="flex-grow-1 p-3">
+        {/* Content goes here */}
       </div>
-    </nav>
+    </div>
   );
 }
 
-export default Navbar;
+export default Sidebar;
